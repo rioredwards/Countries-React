@@ -3,8 +3,8 @@ import { Col, Card } from 'react-bootstrap';
 
 export default function CountryCard({ name, iso2 }) {
   return (
-    <Col sm={6} md={4} lg={4} xl={3}>
-      <Card className="my-2" bg="light" style={{ width: '12rem', height: '12rem' }}>
+    <Col sm={6} md={4} lg={4} xl={3} className="d-flex justify-content-center">
+      <Card className="my-2 shadow-sm" bg="light" style={{ width: '12rem', height: '12rem' }}>
         <Card.Header className="text-center">{name}</Card.Header>
         <Card.Body className="d-flex justify-content-center align-items-center">
           <Card.Img

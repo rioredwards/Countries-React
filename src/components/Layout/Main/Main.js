@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { fetchCountries } from '../../../services/country.js';
 import CountryCard from '../../CountryCard/CountryCard.js';
 
@@ -16,7 +16,7 @@ export default function Main() {
 
   return (
     <main>
-      <Container fluid className="d-flex">
+      <Container fluid className="d-flex my-3">
         <Row className="px-lg-20">
           {countries.map((country) => (
             <CountryCard key={country.id} {...country} />
@@ -26,12 +26,3 @@ export default function Main() {
     </main>
   );
 }
-
-const countryModel = {
-  id: 1,
-  continent: null,
-  iso2: 'BQ',
-  iso3: 'BES',
-  local_name: null,
-  name: 'Bonaire, Sint Eustatius and Saba',
-};
