@@ -11,7 +11,7 @@ function App() {
           <Header />
         </Col>
       </Row>
-      <Row className="">
+      <Row>
         <Col>
           <Main />
         </Col>
