@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Alert, Container, Row } from 'react-bootstrap';
+import { Alert, Col, Container, Form, Row } from 'react-bootstrap';
 import { useCountries } from '../../../hooks/useCountries.js';
 import CountryCard from '../../CountryCard/CountryCard.js';
+import SearchForm from '../../SearchForm/SearchForm.js';
 
 export default function Main() {
   const { countries, error } = useCountries();
@@ -19,14 +20,7 @@ export default function Main() {
       <Alert show={!!error} className="mx-4" variant="danger">
         {error}
       </Alert>
-      <select onChange={(e) => setContinent(e.target.value)}>
-        <option value="all">all</option>
-        {continents.map((continent) => (
-          <option key={continent} value={continent}>
-            {continent}
-          </option>
-        ))}
-      </select>
+      <SearchForm continents={continents} setContinent={setContinent} />
       <Container fluid className="d-flex my-3">
         <Row className="px-lg-20">
           {filtered.map((country) => (
