@@ -17,7 +17,7 @@ export default function Main() {
   return (
     <main>
       <Container fluid className="d-flex">
-        <Row>
+        <Row className="px-lg-20">
           {countries.map((country) => (
             <CountryCard key={country.id} {...country} />
           ))}
