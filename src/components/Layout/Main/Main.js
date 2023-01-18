@@ -1,21 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
-import { fetchCountries } from '../../../services/country.js';
+import { Alert, Container, Row } from 'react-bootstrap';
+import { useCountries } from '../../../hooks/useCountries.js';
 import CountryCard from '../../CountryCard/CountryCard.js';
 
 export default function Main() {
-  const [countries, setCountries] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const resp = await fetchCountries();
-      setCountries(resp);
-    };
-    fetchData();
-  }, []);
+  const { countries, error } = useCountries();
 
   return (
     <main>
+      <Alert show={!!error} className="mx-4" variant="danger">
+        {error}
+      </Alert>
       <Container fluid className="d-flex my-3">
         <Row className="px-lg-20">
           {countries.map((country) => (
