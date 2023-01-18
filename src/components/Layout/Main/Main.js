@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Alert, Col, Container, Form, Row } from 'react-bootstrap';
+import { Alert, Container, Row } from 'react-bootstrap';
 import { useCountries } from '../../../hooks/useCountries.js';
 import CountryCard from '../../CountryCard/CountryCard.js';
 import SearchForm from '../../SearchForm/SearchForm.js';
